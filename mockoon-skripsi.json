@@ -1,31 +1,82 @@
 {
-    "uuid": "847f8bf4-32f4-4040-89ff-2eabec434f79",
-    "type": "http",
-    "documentation": "",
-    "method": "get",
-    "endpoint": "store/products",
-    "responses": [
+  "uuid": "environment-uuid-12345",
+  "lastMigration": 32,
+  "name": "Skripsi Mock API",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "847f8bf4-32f4-4040-89ff-2eabec434f79",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "store/products",
+      "responses": [
         {
-            "uuid": "c51b8549-6254-48db-8ac7-d7cb2ad15171",
-            "body": "{\r\n  \"products\": [\r\n    {{# repeat 100 }}\r\n    {\r\n      \"productId\": \"{{ faker 'number.int' min=1000 max=9999 }}\",\r\n      \"name\": \"{{ faker 'commerce.productName' }}\",\r\n      \"price\": \"{{ faker 'commerce.price' }}\",\r\n      \"category\": \"{{ faker 'commerce.department' }}\",\r\n      \"description\": \"{{ faker 'commerce.productDescription' }}\",\r\n      \"stock\": \"{{ faker 'number.int' min=0 max=100 }}\",\r\n      \"createdAt\": \"{{ faker 'date.past' }}\"\r\n    }{{# unless @last }},{{/ unless }}\r\n    {{/ repeat }}\r\n  ],\r\n  \"total\": 100\r\n}",
-            "latency": 0,
-            "statusCode": 200,
-            "label": "",
-            "headers": [],
-            "bodyType": "INLINE",
-            "filePath": "",
-            "databucketID": "",
-            "sendFileAsBody": false,
-            "rules": [],
-            "rulesOperator": "OR",
-            "disableTemplating": false,
-            "fallbackTo404": false,
-            "default": true,
-            "crudKey": "id",
-            "callbacks": []
+          "uuid": "c51b8549-6254-48db-8ac7-d7cb2ad15171",
+          "body": "{\n  \"products\": [\n    {{# repeat 100 }}\n    {\n      \"productId\": \"{{ faker 'number.int' min=1000 max=9999 }}\",\n      \"name\":>
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
         }
-    ],
-    "responseMode": null,
-    "streamingMode": null,
-    "streamingInterval": 0
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "847f8bf4-32f4-4040-89ff-2eabec434f79"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
 }
